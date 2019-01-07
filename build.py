@@ -14,7 +14,7 @@ package_files = {
     "/package/conan/conanfile.py": "conanfile.py",
     "/package/conan/CMakeLists.txt": "CMakeLists.txt"
 }
-package_download_url = "https://github.com/Croydon/conan-corrade/archive/stable/" + package_version
+package_download_url = "https://github.com/Croydon/conan-corrade/archive/stable/" + package_version + ".zip"
 extracted_dir = "conan-" + package_name + "-stable-" + package_version
 
 # This conan file is getting maintained upstream at https://github.com/mosra/corrade
