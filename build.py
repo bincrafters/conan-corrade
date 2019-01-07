@@ -4,18 +4,14 @@
 from bincrafters import build_template_default
 from conans import tools
 import shutil
+import os
 
 
 package_name = "corrade"
-package_version = "2018.10"
-package_download_sha256sum = "b8a81bd003a66596fdacc9c1f0751c51792be67d42fc04eaf76b766ee61d4698"
-package_files = {
-    "/package/conan/test_package/": "test_package/",
-    "/package/conan/conanfile.py": "conanfile.py",
-    "/package/conan/CMakeLists.txt": "CMakeLists.txt"
-}
-package_download_url = "https://github.com/Croydon/conan-corrade/archive/stable/" + package_version + ".zip"
-extracted_dir = "conan-" + package_name + "-stable-" + package_version
+package_version = "2019.01"
+package_download_sha256sum = "3396a081c46f3fd1eb84c42bf626191439aa1fd4e69090663cdd0d46355572c4"
+package_download_url = "https://github.com/Croydon/corrade/archive/" + package_version + ".zip"
+extracted_dir = package_name + "-" + package_version
 
 # This conan file is getting maintained upstream at https://github.com/mosra/corrade
 # while we are providing CI / CD
@@ -23,8 +19,9 @@ extracted_dir = "conan-" + package_name + "-stable-" + package_version
 
 tools.get(package_download_url, sha256=package_download_sha256sum)
 
-for key, value in package_files.items():
-    shutil.move(extracted_dir + key, value)
+files_list = os.listdir(extracted_dir)
+for files in files_list:
+    shutil.move(os.path.join(extracted_dir, files), ".")
 
 tools.rmdir(extracted_dir)
 
