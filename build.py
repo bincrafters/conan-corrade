@@ -21,7 +21,7 @@ tools.get(package_download_url, sha256=package_download_sha256sum)
 
 files_list = os.listdir(extracted_dir)
 for files in files_list:
-    shutil.move(os.path.join(extracted_dir, files), ".")
+    shutil.copy(os.path.join(extracted_dir, files), "./")
 
 tools.rmdir(extracted_dir)
 
