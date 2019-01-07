@@ -9,7 +9,7 @@ import os
 
 package_name = "corrade"
 package_version = "2019.01"
-package_download_sha256sum = "b7658467e7d2c3d83e2bc8ad902d3839d34e0fc7bbe8941e9c8d80ded6601489"
+package_download_sha256sum = "d7db56d705376a26e2cb1d6606f95550342d145f07c37990e75c765c0769950f"
 package_download_url = "https://github.com/Croydon/corrade/archive/" + package_version + ".zip"
 extracted_dir = package_name + "-" + package_version
 
